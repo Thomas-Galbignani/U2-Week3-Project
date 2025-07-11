@@ -23,6 +23,7 @@ const getCd = function () {
     })
     .then((arrayOfProducts) => {
       console.log(`array di prodotti`, arrayOfProducts);
+      document.getElementById(`spinner-container`).classList.add(`d-none`);
 
       let cards = ``; // mi creo un contenitore vuoto che andrò a riempire dopo che riempirò ad ogni ciclo
       // utilizzo i ${template literals} per recuperarmi i valori precisi
@@ -42,9 +43,7 @@ const getCd = function () {
             <p class="card-text text-center fs-4 ">
              ${arrayOfProducts[i].price}€
             </p>
-            <div class="d-flex justify-content-between">
-             
-              <button onClick class="btn btn-success">compra</button>
+            <div class="d-flex justify-content-center">
               <p><a class="btn btn-primary p-2" href="./detail.html?cdId=${arrayOfProducts[i]._id}">More info</a></p>
             </div>
           </div>
